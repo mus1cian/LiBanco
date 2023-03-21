@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  streamlit:
+    image: app
+    build: .
+    container_name: streamlit
+    ports:
+      - "8501:8501"
+    networks:
+      - proyecto
+
+networks:
+  proyecto:
+    external: true
+
+volumes:
+  oracle_data:
+  oracle_fast_recovery_area:
